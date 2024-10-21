@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>آلة حاسبة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Cairo', sans-serif;
             background-color: #2c3e50;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column; /* تغير الاتجاه إلى عمودي */
             height: 100vh;
             margin: 0;
         }
@@ -44,7 +47,7 @@
             font-size: 1.5em;
             padding: 20px;
             cursor: pointer;
-            transition: all 0.1s ease; /* تقليل التأخير في التفاعل */
+            transition: all 0.1s ease;
             position: relative;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3),
@@ -52,7 +55,7 @@
             color: #fff;
         }
         .button:hover {
-            transform: translateY(-3px); /* تقليل الحركة */
+            transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4),
                         inset 0 -5px 15px rgba(255, 255, 255, 0.8);
         }
@@ -89,6 +92,30 @@
         .button.delete:hover {
             background: #2980b9;
         }
+
+        .telegram-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .telegram-button {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            background-color: #0088cc;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .telegram-button:hover {
+            background-color: #0077b3;
+        }
+
+        .telegram-icon {
+            margin-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -122,11 +149,18 @@
         </div>
     </div>
 
+    <div class="telegram-container">
+        <a href="https://t.me/Scorpion_scorp" class="telegram-button" target="_blank">
+            انضم لقناتنا على تليجرام 
+            <i class="fab fa-telegram-plane telegram-icon"></i>
+        </a>
+    </div>
+
     <script>
         function appendToDisplay(value) {
             const display = document.getElementById('display');
             display.value += value;
-            display.focus(); // إضافة التركيز على حقل الإدخال
+            display.focus();
         }
 
         function clearDisplay() {
